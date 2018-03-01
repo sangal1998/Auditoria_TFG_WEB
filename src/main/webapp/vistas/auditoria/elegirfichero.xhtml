@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:panel style="display: none" id="elegirficheroPanel" widgetVar="elegirficheroPanel">
+        <h:form id="elegirficheroForm">
+            <div style="text-align: justify; margin-left: 20%; margin-right: 20%"><h3>Por favor elija el fichero sobre el que se desea hacer la auditoria</h3></div><br/>
+            <div style="text-align: center;">
+            
+                <p:panelGrid columns="2" styleClass="gridsinborder">
+                <p:outputLabel value="Fichero: *" for="fichero" />
+                <h:panelGroup>
+                    <p:selectOneMenu id="fichero" value="#{managedBeanAuditoria.selectedfichero}" title="Introduzca el fichero a auditar" filterMatchMode="startsWith" filter="true">
+                        <f:selectItem itemLabel="Elija un fichero..."/>
+                        <f:selectItems value="#{managedBeanAuditoria.listaficheros}"
+                               var="idfichero"
+                               itemValue="#{idfichero.idFichero}"
+                               itemLabel="#{idfichero.nombreFichero}"/>
+                        <f:validator validatorId="requiredValidator" />
+                    </p:selectOneMenu>
+                </h:panelGroup>
+                <p:commandButton value="Evaluar Fichero" action="#{managedBeanAuditoria.irATest}" immediate="false" oncomplete="if(args.validationFailed){alert('Debe introducir el fichero a auditar');}" />
+                <p:commandButton value="Cancelar" actionListener="#{managedBeanAuditoria.resetFichero}" immediate="false" update="presentacionPanel" oncomplete="changeTo('presentacionPanel','elegirficheroPanel');" />
+                </p:panelGrid>
+            </div>   
+        </h:form>
+        </p:panel>
+    </ui:composition>
+</html>

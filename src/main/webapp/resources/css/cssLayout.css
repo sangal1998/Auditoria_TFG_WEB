@@ -1,0 +1,88 @@
+#top { 
+    background-image: url("../Titulo.gif"); 
+    background-repeat: no-repeat; 
+    background-position:center; 
+    position: relative; 
+    background-color: #036fab; 
+    height: 150px; 
+    color: white; 
+    padding: 5px; 
+    margin: 0px 0px 10px 0px; 
+
+
+} 
+
+
+#bottom { 
+    position: relative; 
+    background-color: #036fab; 
+    padding: 5px; 
+    margin: 10px 0px 0px 0px; 
+} 
+
+
+#left { 
+    float: left; 
+    background-color: #ece3a5; 
+    padding: 5px; 
+    width: 150px; 
+} 
+
+
+#right { 
+    float: right; 
+    background-color: #ece3a5; 
+    padding: 5px; 
+    width: 150px; 
+} 
+
+
+.center_content { 
+    position: relative; 
+    background-color: #dddddd; 
+    padding: 5px; 
+} 
+
+
+.left_content { 
+    background-color: #dddddd; 
+    padding: 5px; 
+    margin-left: 170px; 
+} 
+
+
+.right_content { 
+    background-color: #dddddd; 
+    padding: 5px; 
+    margin: 0px 170px 0px 170px; 
+} 
+
+
+#top a:link, #top a:visited { 
+    color: black; 
+    font-weight : bold; 
+    text-decoration: none; 
+} 
+
+
+#top a:link:hover, #top a:visited:hover  { 
+    color: black; 
+    font-weight : bold; 
+    text-decoration : underline; 
+}
+
+.gridsinborder{
+    margin: 0 auto;
+    border-style: none !important;
+}
+
+.ui-panelgrid-cell
+{
+    border-style: none !important;
+    margin: 0 auto;
+}
+
+.ui-widget-content
+{
+    border-style: none !important;
+}

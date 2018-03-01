@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+    <ui:composition template="./../Plantilla/Plantilla.xhtml">
+
+
+            <ui:define name="content">
+                <h:form>
+                    <h1><h:outputText value="Gestion del Reglamento"/></h1>
+
+
+                     <p:dataTable id="datalist"
+                         emptyMessage="No hay categorias con los criterios de busqueda"                         
+                         value="#{managedBeanReglamento.findAll()}"
+                         lazy="false"
+                         widgetVar="regTable"
+                         var="item"
+                         paginator="true"
+                         rows="10"
+                         rowKey="#{item.idPregunta}"
+                         filteredValue="#{managedBeanReglamento.filteredReg}"
+                         rowsPerPageTemplate="5,10,20,30,40,50">
+
+
+                        <f:facet name="header">
+                            <p:outputPanel>
+                                <h:outputText value="Filtrar por todos los campos:" />
+                                <p:inputText id="globalFilter" onkeyup="PF('regTable').filter()" style="width:150px" placeholder="Introduzca la clave"/>
+                            </p:outputPanel>
+                        </f:facet>
+
+
+                        <p:column filterBy="#{item.idPregunta}"  headerText="Id Pregunta" filterMatchMode="contains">
+                            <f:facet name="header">Id Pregunta</f:facet>
+                            <h:outputText value="#{item.idPregunta}" />
+                        </p:column>
+
+
+                        <p:column width="400" filterBy="#{item.pregunta}"  headerText="pregunta" filterMatchMode="contains">
+                            <f:facet name="header">Pregunta</f:facet>
+                            <h:outputText value="#{item.pregunta}" />
+                        </p:column>
+
+
+                        <p:column filterBy="#{item.incumplimiento}"  headerText="incumplimiento" filterMatchMode="contains">
+                            <f:facet name="header">Incumplimiento</f:facet>
+                            <h:outputText value="#{item.incumplimiento}" />
+                        </p:column>
+                        
+                        <p:column filterBy="#{item.nivelFichero}"  headerText="nivelfichero" filterMatchMode="contains">
+                            <f:facet name="header">Nivel Fichero</f:facet>
+                            <h:outputText value="#{item.nivelFichero}" />
+                        </p:column>
+
+                        <p:column filterBy="#{item.tipoFichero}"  headerText="tipofichero" filterMatchMode="contains">
+                            <f:facet name="header">Tipo Fichero</f:facet>
+                            <h:outputText value="#{item.tipoFichero}" />
+                        </p:column>
+                         
+                        <p:column filterBy="#{item.categoria}"  headerText="categoria" filterMatchMode="contains">
+                            <f:facet name="header">Categoria</f:facet>
+                            <h:outputText value="#{item.categoria}" />
+                        </p:column>
+
+
+
+                    </p:dataTable>
+
+
+                </h:form>
+            </ui:define>
+
+
+        </ui:composition>   
+    </h:body>
+</html>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:panel style="display: block" id="presentacionPanel" widgetVar="presentacionPanel">
+        <h:form id="presentacionForm">
+            <div style="text-align: justify; margin-left: 20%; margin-right: 20%"><h3>El objetivo de este aplicativo es tratar de facilitar el cumplimiento de las obligaciones recogidas en la Ley Orgánica de Protección de Datos (LOPD) y su Reglamento de desarrollo (RLOPD), poniendo a disposición de los usuarios de empresas y administraciones, una sencilla herramienta que permita evaluar el grado de cumplimiento de la Ley Orgánica de Protección de Datos.</h3><br/><h3>En primer lugar se le mostrará una serie de ficheros disponibles de los cuales deberá elegir uno. A continuación se le harán una serie de preguntas en la relación al fichero que ha elegido. Finalmente se mostrará un informe con los resultados</h3></div><br/>
+            <div style="text-align: center;">
+                <p:commandButton value="Comenzar Auditoría" actionListener="#{managedBeanAuditoria.obtenerFicheros}" immediate="true" oncomplete="changeTo('elegirficheroPanel','presentacionPanel');" update="elegirficheroPanel"/>
+            </div>                
+        </h:form>
+        </p:panel>
+    </ui:composition>
+</html>

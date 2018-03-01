@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <body> 
+        <ui:composition template="./../Plantilla/Plantilla.xhtml">
+
+
+            <ui:define name="content">
+                <h:form>
+                    <h1><h:outputText value="Gestion de Usuarios"/></h1>
+
+
+                    <p:dataTable var="usu" value="#{managedBeanUsuarios.findAll()}" widgetVar="usuTable" 
+                                 emptyMessage="No hay usuarios con los criterios de busqueda" filteredValue="#{managedBeanUsuarios.filteredUsu}"
+                                 paginator="true" rows="10">
+
+
+                        <f:facet name="header">
+                            <p:outputPanel>
+                                <h:outputText value="Filtrar por todos los campos:" />
+                                <p:inputText id="globalFilter" onkeyup="PF('usuTable').filter()" style="width:150px" placeholder="Introduzca la clave"/>
+                            </p:outputPanel>
+                        </f:facet>
+
+
+                        <p:column filterBy="#{usu.login}"  headerText="login" filterMatchMode="contains">
+                            <f:facet name="header">Login</f:facet>
+                            <h:outputText value="#{usu.login}" />
+                        </p:column>
+
+
+                        <p:column>
+                            <f:facet name="header">Password</f:facet>
+                            <h:outputText value="#{usu.password}" />
+                        </p:column>
+
+
+                        <p:column filterBy="#{usu.nombre}"  headerText="nombre" filterMatchMode="contains">
+                            <f:facet name="header">Nombre</f:facet>
+                            <h:outputText value="#{usu.nombre}" />
+                        </p:column>
+
+                        <p:column filterBy="#{usu.acceso.acceso}"  headerText="acceso" filterMatchMode="contains">
+                            <f:facet name="header">Acceso</f:facet>
+                            <h:outputText value="#{usu.acceso.acceso}" />
+                        </p:column>
+
+
+                        <p:column>
+                            <f:facet name="header">Opciones</f:facet>
+                            <h:commandLink value="Borrar" action="#{managedBeanUsuarios.delete(usu)}" onclick="return confirm('¿Quiere borrar el registro?')"></h:commandLink> |
+                            <h:commandLink value="Editar" action="#{managedBeanUsuarios.edit(usu)}" ></h:commandLink>
+                            
+                        </p:column>
+
+                    </p:dataTable>
+                    <h:button outcome="add" value="Añadir"></h:button>
+                    <!--                    <p:button outcome="add" value="Añadir"></p:button>                -->
+                </h:form>
+            </ui:define>
+
+
+        </ui:composition>
+
+    </body>
+
+</html>

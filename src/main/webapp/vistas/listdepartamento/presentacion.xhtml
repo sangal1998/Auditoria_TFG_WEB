@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:panel style="display: block" id="presentacionPanel" widgetVar="presentacionPanel">
+        <h:form id="presentacionForm">
+            <div style="text-align: justify; margin-left: 20%; margin-right: 20%"><h3>En la presente página usted podrá visualizar los informes de todas las auditorias realizadas en la aplicación</h3><br/><h3>A continuación se le mostrarán todas las auditorias que se han realizado. En este listado, usted puede volver a generar y visualizar el informe de dicha auditoría</h3></div>
+            <div style="text-align: center;">
+                <p:commandButton value="Ver Auditorías" action="#{managedBeanInformeAuditoria.obtenerAuditorias}" immediate="false" />
+            </div>                
+        </h:form>
+        </p:panel>
+    </ui:composition>
+</html>

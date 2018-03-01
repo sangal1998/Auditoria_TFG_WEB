@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+        /* comentario */
+    </h:head>
+    <h:body>
+        <ui:composition template="./../Plantilla/Plantilla.xhtml">
+
+
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="Añadir Fichero"/></h1>
+                        <br /><br />                    
+                        <p:button outcome="volvermantficheros" value="Volver"></p:button> 
+                        <br /><br />  
+                        <h:panelGrid columns="2">
+                                <h:outputLabel value="IdFichero:" for="IdFichero" />
+                                <h:inputText id="IdFichero" value="#{managedBeanFicheros.f.idFichero}" title="ID Fichero" required="true" requiredMessage="El campo idFichero es Obligatorio."/>
+                                <h:outputLabel value="Nombre Fichero:" for="NombreFichero" />
+                                <h:inputText id="NombreFichero" value="#{managedBeanFicheros.f.nombreFichero}" title="Nombre Fichero" required="true" requiredMessage="El campo NombreFichero es obligatorio."/>
+                                <h:outputLabel value="Tipo Fichero:" for="tipofichero" />
+                                <p:selectOneMenu id="tipofichero" value="#{managedBeanFicheros.idtipofichero}">
+                                    <f:selectItem itemLabel="Select One" itemValue="" />
+                                    <f:selectItems value="#{managedBeanTipoFichero.seleccionarItem()}" />
+                                </p:selectOneMenu>
+                                 <h:outputLabel value="Nivel Fichero:" for="nivelfichero" />
+                                <p:selectOneMenu id="nivelfichero" value="#{managedBeanFicheros.idnivelfichero}">
+                                    <f:selectItem itemLabel="Select One" itemValue="" />
+                                    <f:selectItems value="#{managedBeanNivelFichero.seleccionarItem()}" />
+                                </p:selectOneMenu>
+                                 <h:commandButton value="Guardar" action="#{managedBeanFicheros.add()}"></h:commandButton>
+                            </h:panelGrid>
+                    </h:form>
+                </f:view>
+            </ui:define>
+
+
+        </ui:composition>        
+    </h:body>
+</html>
+

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="./../resources/css/default.css" rel="stylesheet" type="text/css"/>
+        <link href="./../resources/css/cssLayout.css" rel="stylesheet" type="text/css"/>
+        <h:outputScript library="js" name="scriptAuditoria.js"/>
+        <title>Consultoria LOPD</title>
+    </h:head>
+
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top"></ui:insert>
+
+
+            <p:megaMenu orientation="1" style="margin-top:110px">
+                <p:submenu label="Administrador" icon="ui-icon-key">
+                    <p:column>
+                        <p:submenu label="Administración">                    
+                            <p:menuitem value="Gestión usuarios" url="../vistas/usuario.xhtml" />
+                        </p:submenu>
+                    </p:column>                            
+                    <p:column>
+                        <p:submenu label="Mantenimiento de Tablas">
+                            <p:menuitem value="Categorias" url="../vistas/categorias.xhtml" />
+                            <p:menuitem value="Reglamento" url="../vistas/reglamento.xhtml" />
+                            <p:menuitem value="Ficheros" url="../vistas/ficheros.xhtml" />
+                        </p:submenu>
+                    </p:column>
+                    <p:column>
+                        <p:submenu label="Planificación">                    
+                            <p:menuitem value="Gestión de Auditorias" url="../vistas/gestionentidades.xhtml" />
+                        </p:submenu>
+                    </p:column>                            
+                    <p:column>
+                        <p:submenu label="Informes">
+                            <p:menuitem value="Informe Auditorias del Fichero" url="../vistas/listficheros.xhtml" />
+                            <p:menuitem value="Informe Auditoria" url="../vistas/listdepartamento.xhtml" />
+                        </p:submenu>
+                    </p:column>
+                </p:submenu>
+                
+                <p:submenu label="Usuario" icon="ui-icon-pencil">
+                    <p:column>
+                        <p:submenu label="Auditorias">
+                            <p:menuitem value="Mantenimiento de Ficheros" url="../vistas/mantficheros.xhtml" />
+                            <p:menuitem value="Test de Cumplimiento" url="../vistas/auditoria.xhtml" />
+                        </p:submenu>
+                    </p:column>
+                    <p:column>
+                        <p:submenu label="Informes">
+                                <p:menuitem value="Informe Auditorias del Fichero" url="../vistas/listficheros.xhtml" />
+                                <p:menuitem value="Informe Auditoria" url="../vistas/listdepartamento.xhtml" />
+                        </p:submenu>
+                    </p:column>
+                </p:submenu>
+
+                <p:menuitem value="Salir" url="../index.xhtml" action="#{managedBeanLoginUsuarios.logoutUsuario}" icon="ui-icon-close" />
+            </p:megaMenu>
+        </div>
+
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+
+        <div id="bottom">
+            <ui:insert name="bottom">
+                <h:form>
+                    <p:outputPanel deferred="true">
+                        <p align="center" style="color: white">Santiago Galicia Martínez</p>
+                    </p:outputPanel>
+
+
+                </h:form>
+            </ui:insert>
+        </div>
+
+
+    </h:body>
+
+
+</html>

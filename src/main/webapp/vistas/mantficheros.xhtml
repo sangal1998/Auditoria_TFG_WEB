@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+
+
+        <ui:composition template="./../Plantilla/Plantilla.xhtml">
+
+
+            <ui:define name="content">
+                <h:form>
+                    <h1><h:outputText value="Mantenimiento de ficheros"/></h1>
+                   <p:dataTable var="fic" value="#{managedBeanFicheros.findAll()}" widgetVar="ficTable" 
+                                 emptyMessage="No hay ficheros con los criterios de busqueda" filteredValue="#{managedBeanFicheros.filteredfic}"
+                                 paginator="true" rows="10">
+
+
+                        <f:facet name="header">
+                            <p:outputPanel>
+                                <h:outputText value="Filtrar por todos los campos:" />
+                                <p:inputText id="globalFilter" onkeyup="PF('ficTable').filter()" style="width:150px" placeholder="Introduzca la clave"/>
+                            </p:outputPanel>
+                        </f:facet>
+
+
+                        <p:column filterBy="#{fic.idFichero}"  headerText="idfichero" filterMatchMode="contains">
+                            <f:facet name="header">Id Fichero</f:facet>
+                            <h:outputText value="#{fic.idFichero}" />
+                        </p:column>
+                      
+
+                        <p:column filterBy="#{fic.nombreFichero}"  headerText="nombre" filterMatchMode="contains">
+                            <f:facet name="header">Nombre</f:facet>
+                            <h:outputText value="#{fic.nombreFichero}" />
+                        </p:column>
+
+                        <p:column filterBy="#{fic.tipoFichero.tipoFichero}"  headerText="tipofichero" filterMatchMode="contains">
+                            <f:facet name="header">Tipo Fichero</f:facet>
+                            <h:outputText value="#{fic.tipoFichero.tipoFichero}" />
+                        </p:column>
+                        
+                        <p:column filterBy="#{fic.nivelFichero.nivelFichero}"  headerText="nivelfichero" filterMatchMode="contains">
+                            <f:facet name="header">Nivel Fichero</f:facet>
+                            <h:outputText value="#{fic.nivelFichero.nivelFichero}" />
+                        </p:column>
+                        
+                        <p:column>
+                            <f:facet name="header">Opciones</f:facet>
+                            <h:commandLink value="Editar" action="#{managedBeanFicheros.edit(fic)}" ></h:commandLink>
+                        </p:column>
+
+                    </p:dataTable>
+                    <h:button outcome="add" value="Añadir"></h:button>
+              
+                </h:form>
+            </ui:define>
+
+
+        </ui:composition>
+
+
+    </h:body>
+</html>
+

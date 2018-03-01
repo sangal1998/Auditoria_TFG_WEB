@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="vistas/auditoria/test.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="vistas/auditoria/testA.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="vistas/editficheros.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="vistas/auditoria.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="vistas/editmantficheros.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="vistas/auditoria/testM.xhtml" x="1150" y="600" zoom="true"/>
+        <Node id="vistas/categorias.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="vistas/editcategorias.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="resources/ezcomp/out1.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="vistas/listficheros/listado.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="vistas/reglamento.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="vistas/listficheros/presentacion.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="vistas/listdepartamento/informe.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="vistas/listficheros.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="vistas/auditoria/presentacion.xhtml" x="1900" y="300" zoom="true"/>
+        <Node id="vistas/listficheros/informe.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="vistas/auditoria/yaexiste.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="vistas/usuario.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="vistas/auditoria/vacio.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="vistas/home.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="vistas/editusuario.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="vistas/ficheros.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="vistas/mantficheros.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="vistas/auditoria/testB.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="vistas/auditoria/informe.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="vistas/auditoria/elegirfichero.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="vistas/listdepartamento/presentacion.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="Plantilla/Plantilla.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="vistas/addusuario.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="vistas/addficheros.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="vistas/listficheros/elegirfichero.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="vistas/listdepartamento.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="vistas/auditoriafichero.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="vistas/addcategorias.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="vistas/addmantficheros.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="vistas/listdepartamento/listado.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="resources/ezcomp/out.xhtml" x="400" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

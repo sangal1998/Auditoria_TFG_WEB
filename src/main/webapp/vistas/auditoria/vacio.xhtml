@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Test Fichero LOPD</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="./../../Plantilla/Plantilla.xhtml">
+            <ui:define name="content">
+                <f:view>
+                    <div style="text-align: center"><h1>Auditar Fichero LOPD #{managedBeanAuditoria.ficheroanalizado.nombreFichero}</h1></div><br/>
+                    <h1>No existe ninguna pregunta para este fichero. Por favor contacte con el administrador de la aplicación para indicar las preguntas de este test</h1>
+                    <h:form id="vacioForm">
+                    <div style="text-align: justify; margin-left: 3%; margin-right: 3%"><p:commandButton value="Guardar Test" action="#{managedBeanAuditoria.guardarTest}" immediate="false" oncomplete="if(args.validationFailed){alert('Debe contestar todas las preguntas');}" />
+                    <p:commandButton value="Volver Atrás" action="#{managedBeanAuditoria.resetTest}" immediate="true" /></div>
+                    </h:form>
+                <br />
+                </f:view>
+            </ui:define>
+        </ui:composition>        
+    </h:body>
+</html>
+
